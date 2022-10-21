@@ -3,6 +3,3 @@
 
 # Ignore VS Code configuration
 .vscode/
-
-# Ignore .env files
-.env
