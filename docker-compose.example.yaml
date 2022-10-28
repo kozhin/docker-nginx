@@ -1,0 +1,60 @@
+---
+version: '3'
+
+networks:
+  pub_net:
+
+volumes:
+
+  web_config:
+    driver: local
+
+  web_certs:
+    driver: local
+
+#
+# Add more volumes for your services below
+#
+# E.g.:
+#
+#  example_data:
+#    driver: local
+#
+
+services:
+
+  web:
+    image: kozhin/docker-nginx:1.22.1
+    container_name: web
+    restart: unless-stopped
+    networks:
+      - pub_net
+    volumes:
+      - web_config:/etc/nginx
+      - web_certs:/etc/letsencrypt
+    ports:
+      - 80:80
+      - 443:443
+
+#
+# Add more services below
+#
+# E.g.:
+#
+#  example:
+#    image: example:latest
+#    container_name: example
+#    environment:
+#      - ENV=production
+#    restart: unless-stopped
+#    networks:
+#      - pub_net
+#    volumes:
+#      - example_data:/data
+#      - /etc/timezone:/etc/timezone:ro
+#      - /etc/localtime:/etc/localtime:ro
+#    ports:
+#      - 31443:3000
+#      - 31080:3000
+#    depends_on:
+#      - example2
