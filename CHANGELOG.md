@@ -2,6 +2,15 @@
 # Changelog
 
 =====================
+## [0.2.0] 03/11/2022 - `Improvements`: Health checks feature
+
+Changes:
+
+0. VERSION and CHANGELOG updated
+1. Health checks added. See docker-compose.example.yaml
+2. Latest tag added
+
+=====================
 ## [0.1.1] 29/10/2022 - `Documentation`: README.md updates and many more
 
 Changes:

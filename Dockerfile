@@ -2,8 +2,8 @@ FROM nginx:stable-alpine
 
 LABEL Description="Nginx Docker image" \
       Maintainer="Konstantin Kozhin <1387510+kozhin@users.noreply.github.com>" \
-      Vendor="CodedRed" \
-      Version="0.1.1"
+      Vendor="" \
+      Version="0.2.0"
 
 # Install necessary packages
 RUN apk update && \
@@ -32,4 +32,4 @@ EXPOSE 443 80
 STOPSIGNAL SIGQUIT
 
 # Set execution command
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "nginx", "-g", "daemon off;" ]
