@@ -10,10 +10,12 @@ build:
 	--push \
 	--platform=linux/amd64,linux/arm64 \
 	-t kozhin/docker-nginx:1.22.1 \
+	-t kozhin/docker-nginx:latest \
 	-f Dockerfile \
 	.
+
 #
-# TODO: add latest image tagging
+# TODO: add auto-tests
 #
 # TEST actions
 # Local testing
