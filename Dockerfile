@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 LABEL Description="Nginx Docker image" \
       Maintainer="Konstantin Kozhin <1387510+kozhin@users.noreply.github.com>" \
       Vendor="" \
-      Version="0.2.0"
+      Version="0.2.1"
 
 # Install necessary packages
 RUN apk update && \
