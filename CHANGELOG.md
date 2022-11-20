@@ -2,6 +2,14 @@
 # Changelog
 
 =====================
+## [0.2.1] 20/11/2022 - `Minor fix`: Docker compose config fix
+
+Changes:
+
+0. VERSION and CHANGELOG updated
+1. docker-compose.example.yaml fix
+
+=====================
 ## [0.2.0] 03/11/2022 - `Improvements`: Health checks feature
 
 Changes:
