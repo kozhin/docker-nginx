@@ -55,7 +55,7 @@ To use this Docker image some manual configuration is required.
 
 1. Exec to running container `web`: `docker exec -it web sh`
 2. Remove your virtual host from `/etc/nginx/conf.d/default.conf` if exists, so Certbot could manage this for you
-3. Adjust and run `/scripts/add_cert.sh`
+3. Adjust and run `/scripts/letsencrypt_add_cert.sh`
 4. Open `/etc/nginx/conf.d/default.conf` and add the following line to virtual host's `server` section with SSL: `include /etc/nginx/conf.d/upstream.conf;`
 5. Verify nginx configuration with `nginx -T`
 6. Reload nginx configuration with `nginx -s reload`
@@ -68,6 +68,14 @@ This is handled automatically on a daily basis for all certificates. If you need
 1. Exec to running container `web`: `docker exec -it web sh`
 2. Run `crontab -e` command
 3. Modify the schedule and save changes
+
+### Real IP support for CloudFlare
+
+When nginx stands behind CloudFlare it can't properly acquire IP addresses of clients connecting to web apps. To solve this issue:
+
+1. Exec to running container `web`: `docker exec -it web sh`
+2. Uncomment line with CloudFlare config (L66) in `/etc/nginx/nginx.conf`
+3. Reload nginx with `nginx -s reload`
 
 ### Shutting down
 

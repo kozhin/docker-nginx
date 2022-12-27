@@ -3,7 +3,7 @@ FROM nginx:stable-alpine
 LABEL Description="Nginx Docker image" \
       Maintainer="Konstantin Kozhin <1387510+kozhin@users.noreply.github.com>" \
       Vendor="" \
-      Version="0.2.1"
+      Version="0.3.0"
 
 # Install necessary packages
 RUN apk update && \
@@ -19,8 +19,12 @@ COPY nginx/nginx.conf .
 COPY conf/*.conf ./conf.d/
 COPY scripts/*.sh /scripts/
 
-# Set Crontab script
-RUN crontab -l | { cat; echo "0 0 * * * sh /scripts/renew_certs.sh > /dev/null 2>&1"; } | crontab -
+# Sync CloudFlare IP addresses pool
+RUN /scripts/cloudflare_update_ip_pool.sh
+
+# Set Crontab scripts
+RUN crontab -l | { cat; echo "0 0 * * * sh /scripts/letsencrypt_renew_certs.sh > /dev/null 2>&1"; } | crontab -
+RUN crontab -l | { cat; echo "0 0 1 * * sh /scripts/cloudflare_apply_ip_pool.sh > /dev/null 2>&1"; } | crontab -
 
 # Set container volumes
 VOLUME [ "/etc/nginx", "/etc/letsencrypt" ]
