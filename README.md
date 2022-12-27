@@ -69,7 +69,7 @@ This is handled automatically on a daily basis for all certificates. If you need
 2. Run `crontab -e` command
 3. Modify the schedule and save changes
 
-### Real IP support in case of CloudFlare
+### Real IP support for CloudFlare
 
 When nginx stands behind CloudFlare it can't properly acquire IP addresses of clients connecting to web apps. To solve this issue:
 
