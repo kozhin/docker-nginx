@@ -18,5 +18,5 @@ certbot -n \
 # Apply new certificate to Nginx configuration
 nginx -s reload
 
-echo "COMPLETED: add_cert.sh"
+echo "COMPLETED: letsencrypt_add_cert.sh"
 exit 0
