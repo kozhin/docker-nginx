@@ -7,5 +7,5 @@
 # Renew all available certificates if expiring
 certbot renew --quiet
 
-echo "COMPLETED: renew_certs.sh"
+echo "COMPLETED: letsencrypt_renew_certs.sh"
 exit 0
