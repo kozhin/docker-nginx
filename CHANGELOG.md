@@ -2,6 +2,12 @@
 # Changelog
 
 =====================
+## [0.3.1] 31/03/2023 - `Nginx & LE update`: Nginx reload on certs renewal
+
+Changes:
+1. Nginx reload after LE renewal daily added
+
+=====================
 ## [0.3.0] 27/12/2022 - `CloudFlare support`: Real IP passing to nginx
 
 Changes:
