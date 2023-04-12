@@ -2,6 +2,12 @@
 # Changelog
 
 =====================
+## [0.3.2] 13/04/2023 - `Nginx update`: Nginx 1.24.0
+
+Changes:
+1. Nginx updated to 1.24.0
+
+=====================
 ## [0.3.1] 31/03/2023 - `Nginx & LE update`: Nginx reload on certs renewal
 
 Changes:
