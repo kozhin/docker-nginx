@@ -2,6 +2,14 @@
 # Changelog
 
 =====================
+## [0.3.3] 13/11/2023 - `Updates & Fixes`: .dockerignore
+
+Changes:
+1. .dockerignore added
+2. acl.conf added
+3. default.conf updated
+
+=====================
 ## [0.3.2] 13/04/2023 - `Nginx update`: Nginx 1.24.0
 
 Changes:
