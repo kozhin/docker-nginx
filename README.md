@@ -94,6 +94,12 @@ NOTE: container volumes will be preserved with all data inside. To delete them u
 
 NOTE: use `docker image prune` to remove unused images. BE CAREFUL! This command may remove other unused images.
 
+### How to remove a virtual host for a domain name
+
+1. Remove certificate from the container (`docker exec -it web sh`): `certbot delete --cert-name example.com`
+2. Remove virtual host upstream from `conf.d/upstreams.conf`
+2. Check `conf.d/default.conf` and remove unnecessary virtual host
+
 ## License
 
 MIT
