@@ -9,7 +9,7 @@ build:
 	docker buildx build \
 		--push \
 		--platform=linux/amd64,linux/arm64 \
-		-t kozhin/docker-nginx:1.24.0 \
+		-t kozhin/docker-nginx:1.26.0 \
 		-t kozhin/docker-nginx:latest \
 		-f Dockerfile \
 		.

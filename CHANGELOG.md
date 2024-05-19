@@ -2,6 +2,13 @@
 # Changelog
 
 =====================
+## [0.4.0] 19/05/2024 - `Nginx`: Nginx upgrade to 1.26.0
+
+Changes:
+1. Switched to Nginx 1.26.0
+2. LE renewal script update
+
+=====================
 ## [0.3.3] 13/11/2023 - `Updates & Fixes`: .dockerignore
 
 Changes:
