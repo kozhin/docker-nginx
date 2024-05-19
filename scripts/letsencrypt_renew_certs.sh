@@ -5,7 +5,7 @@
 # every midnight. You may adjust it in Dockerfile.
 #
 # Renew all available certificates if expiring
-certbot renew --quiet
+certbot renew
 
 # Reload nginx to apply new configuration
 nginx -s reload
