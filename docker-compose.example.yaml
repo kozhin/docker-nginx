@@ -1,8 +1,6 @@
 ---
-version: '3'
-
 networks:
-  pub_net:
+  web_net:
 
 volumes:
 
@@ -24,11 +22,11 @@ volumes:
 services:
 
   web:
-    image: kozhin/docker-nginx:latest # or use version tag
+    image: ghcr.io/kozhin/arm64/nginx:latest
     container_name: web
     restart: unless-stopped
     networks:
-      - pub_net
+      - web_net
     volumes:
       - web_config:/etc/nginx
       - web_certs:/etc/letsencrypt

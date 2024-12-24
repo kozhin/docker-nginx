@@ -2,6 +2,16 @@
 # Changelog
 
 =====================
+## [0.6.0] 24/12/2024 - `Nginx`: Nginx upgrade to 1.26.2
+
+Changes:
+1. Switched to Nginx 1.26.2
+2. Added entrypoint script
+3. Added cron support
+4. Makefile updated: deploy added
+5. Switched to GitHub registry
+
+=====================
 ## [0.5.0] 10/06/2024 - `Nginx`: Nginx upgrade to 1.26.1
 
 Changes:
