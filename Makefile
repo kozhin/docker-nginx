@@ -56,3 +56,13 @@ push_amd64:
 # .PHONY: test
 # test:
 # 	make test-images
+
+# Make release (shortcut)
+.PHONY: release
+release:
+	git checkout dev
+	git push
+	git push --tags
+	git checkout main
+	git push
+	git checkout dev
