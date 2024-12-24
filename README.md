@@ -20,7 +20,7 @@ Alpine Linux + Nginx + Certbot + Cronie + a bunch of shell scripts (see folder `
 
 ### Versioning
 
-Docker images available at [https://ghcr.io](https://ghcr.io) have tags which correspond to installed versions of Nginx and platform architecture (`arm64` | `amd64`). This means that image `ghcr.io/kozhin/arm64/docker-nginx:1.26.2` has Nginx `1.26.2` inside and this image will work on `arm64` devices. Versions of Certbot and other packages are expected to be latest to the moment of image creation (see image creation date).
+Docker images are available at `ghcr.io`. Provided images have Nginx versions and platform architecture (`arm64` | `amd64`). E.g. `ghcr.io/kozhin/arm64/nginx:1.26.2` has Nginx `1.26.2` inside and this image will work on `arm64` devices. Versions of Certbot and other packages are expected to be latest to the moment of image creation (see image creation date).
 
 ### Host machine requirements
 
