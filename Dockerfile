@@ -1,9 +1,9 @@
 FROM nginx:stable-alpine
 
-LABEL Description="Nginx Docker image" \
+LABEL Description="Nginx image for Docker" \
       Maintainer="Konstantin Kozhin <1387510+kozhin@users.noreply.github.com>" \
       Vendor="" \
-      Version="0.5.0"
+      Version="0.6.0"
 
 # Install necessary packages
 RUN apk update && \
@@ -18,6 +18,7 @@ WORKDIR /etc/nginx
 COPY nginx/nginx.conf .
 COPY conf/*.conf ./conf.d/
 COPY scripts/*.sh /scripts/
+COPY entry-point.sh /
 
 # Sync CloudFlare IP addresses pool
 RUN /scripts/cloudflare_update_ip_pool.sh
@@ -36,4 +37,4 @@ EXPOSE 443 80
 STOPSIGNAL SIGQUIT
 
 # Set execution command
-CMD [ "nginx", "-g", "daemon off;" ]
+CMD [ "/entry-point.sh" ]

@@ -1,8 +1,11 @@
 #
 # Automation tasks with Makefile
 #
+REPO = ghcr.io/kozhin
+VERSION = 1.26.2
+
+#
 # BUILD actions
-# Local building
 #
 .PHONY: build
 build:
@@ -13,8 +16,8 @@ build:
 build_arm64:
 	docker buildx build \
 		--platform=linux/arm64 \
-		-t arm64/nginx:1.26.1 \
-		-t arm64/nginx:latest \
+		-t ${REPO}/arm64/nginx:${VERSION} \
+		-t ${REPO}/arm64/nginx:latest \
 		-f Dockerfile \
 		.
 
@@ -22,16 +25,33 @@ build_arm64:
 build_amd64:
 	docker buildx build \
 		--platform=linux/amd64 \
-		-t amd64/nginx:1.26.1 \
-		-t amd64/nginx:latest \
+		-t ${REPO}/amd64/nginx:${VERSION} \
+		-t ${REPO}/amd64/nginx:latest \
 		-f Dockerfile \
 		.
+
+#
+# DEPLOY actions
+#
+.PHONY: deploy
+deploy:
+	make push_arm64
+	make push_amd64
+
+.PHONY: push_arm64
+push_arm64:
+	docker push ${REPO}/arm64/nginx:${VERSION}
+	docker push ${REPO}/arm64/nginx:latest
+
+.PHONY: push_amd64
+push_amd64:
+	docker push ${REPO}/amd64/nginx:${VERSION}
+	docker push ${REPO}/amd64/nginx:latest
 
 #
 # TODO: add auto-tests
 #
 # TEST actions
-# Local testing
 #
 # .PHONY: test
 # test:
