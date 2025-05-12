@@ -2,6 +2,12 @@
 # Changelog
 
 =====================
+## [0.6.1] 13/05/2025 - `Nginx`: Nginx upgrade to 1.28.0
+
+Changes:
+1. Switched to Nginx 1.28.0
+
+=====================
 ## [0.6.0] 24/12/2024 - `Nginx`: Nginx upgrade to 1.26.2
 
 Changes:

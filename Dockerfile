@@ -1,4 +1,5 @@
-FROM nginx:stable-alpine
+ARG REPO_PATH=""
+FROM ${REPO_PATH}nginx:stable-alpine
 
 LABEL Description="Nginx image for Docker" \
       Maintainer="Konstantin Kozhin <1387510+kozhin@users.noreply.github.com>" \
