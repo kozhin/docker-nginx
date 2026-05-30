@@ -13,7 +13,7 @@ In addition, this image includes Let's Encrypt's Certbot which allows to create 
 
 Alpine Linux + Nginx + Certbot + Cronie + a bunch of shell scripts (see folder `scripts`).
 
-### Supported architectures:
+### Supported architectures
 
 - amd64
 - arm64
@@ -98,7 +98,7 @@ NOTE: use `docker image prune` to remove unused images. BE CAREFUL! This command
 
 1. Remove certificate from the container (`docker exec -it web sh`): `certbot delete --cert-name example.com`
 2. Remove virtual host upstream from `conf.d/upstreams.conf`
-2. Check `conf.d/default.conf` and remove unnecessary virtual host
+3. Check `conf.d/default.conf` and remove unnecessary virtual host
 
 ## License
 

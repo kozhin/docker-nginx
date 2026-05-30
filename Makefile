@@ -2,7 +2,7 @@
 # Automation tasks with Makefile
 #
 REPO = ghcr.io/kozhin
-VERSION = 1.28.0
+VERSION = 1.30.2
 
 #
 # BUILD actions
